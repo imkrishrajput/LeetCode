@@ -7,6 +7,5 @@ class Solution {
             j++; 
         }
         Arrays.sort(nums1);
-
     }
 }
