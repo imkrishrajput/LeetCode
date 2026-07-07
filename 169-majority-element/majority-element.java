@@ -2,8 +2,9 @@ class Solution {
     public int majorityElement(int[] nums) {
        Arrays.sort(nums);
         // int j = nums[0];
-        int count = 0;
-        int maxCount = 0;
+        int count = 1;
+        int maxCount = 1;
+        int majority = nums[0];
         for( int i=1; i<nums.length; i++)
         {
             if(nums[i] == nums[i-1])
@@ -13,10 +14,14 @@ class Solution {
             else
             {
                 // j=i;                
-                count = 0;
+                count = 1;
             }
-            maxCount = Math.max(maxCount , count);
+            if(count>maxCount)
+            {
+                maxCount = count;
+                majority = nums[i];
+            }
         }
-        return nums[maxCount];
+        return majority;
     }
 }
