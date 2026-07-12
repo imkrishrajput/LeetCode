@@ -5,8 +5,7 @@ class Solution {
         int maxWater = 0;
         while(left<right)
         {
-            int width = right-left;
-            int tappedWater = width * Math.min(height[left], height[right]);
+            int tappedWater = (right-left) * (Math.min(height[left], height[right]));
             if(height[right]<height[left])
             {
                 right--;
